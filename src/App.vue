@@ -8,15 +8,17 @@
                 </h2>
                 <p class="font-thin flex justify-center">Subscribe and get notified</p>
             </div>
-            <div class="w-full flex flex-col gap-[10px] max-w-[700px]">
-                <div class="w-full h-10 rounded-3xl border-[2px] border-[#4C7BF3] flex items-center py-1 px-3 pl-3">
-                    <input class="font-light outline-none w-full h-full text-sm" type="email"
+            <div class="w-full flex flex-col gap-[10px] max-w-[700px] md:flex-row">
+                <div
+                    class="w-full h-10 rounded-[28px] border-[2px] border-[#4C7BF3] flex items-center py-1 px-3 pl-3 md:flex-[150%] md:h-[56px]">
+                    <input class="font-light outline-none w-full h-full text-sm md:text-base" type="email"
                         placeholder="Your email address…">
                 </div>
-                <button class="w-full h-10 bg-[#4C7BF3] rounded-3xl font-semibold text-white">Notify Me</button>
+                <button class="w-full h-10 bg-[#4C7BF3] rounded-[28px] font-semibold text-white md:h-[56px]">Notify
+                    Me</button>
             </div>
         </div>
-        <div class="px-6 w-full mt-16">
+        <div class="px-6 w-full mt-16 flex justify-center">
             <div class="img"></div>
         </div>
     </div>
@@ -35,7 +37,19 @@
     width: 100%;
     min-height: 200px;
     height: calc(5px + 5vh);
-    padding: 10%;
 
+}
+
+@media (min-width:700px) {
+    .img {
+        background-image: url('./assets/illustration-dashboard-desktop.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        min-width: 650px;
+        max-width: 700px;
+        min-height: 350px;
+        height: calc(5px + 5vh);
+    }
 }
 </style>

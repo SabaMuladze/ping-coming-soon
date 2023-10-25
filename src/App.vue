@@ -10,12 +10,16 @@
                 <p class="font-thin flex justify-center md:text-xl">Subscribe and get notified</p>
             </div>
             <div class="w-full flex flex-col gap-[10px] max-w-[700px] md:flex-row">
-                <div :style="{ border: error ? 'red solid 1px' : '' }"
-                    class="w-full h-10 rounded-[28px] border-[1px] border-[#4C7BF3] flex items-center py-1 px-3 pl-3 md:flex-[150%] md:h-[56px]">
-                    <input class="font-light outline-none w-full h-full text-sm md:text-base" type="email"
-                        placeholder="Your email address…">
+                <div class="md:flex-[150%] md:h-[56px]">
+                    <div :style="{ border: error ? '#FF5466 solid 1px' : '' }"
+                        class="w-full h-10 rounded-[28px] border-[1px] border-[#4C7BF3] flex items-center py-1 px-3 pl-3 md:flex-[150%] md:h-[56px]">
+                        <input v-model="email" class="font-light outline-none w-full h-full text-sm md:text-base"
+                            type="email" placeholder="Your email address…">
+                    </div>
+                    <p v-show="error" class="text-[#FF5466] text-xs md:text-sm">Please provide a valid email address</p>
                 </div>
-                <button class="w-full h-10 bg-[#4C7BF3] rounded-[28px] font-semibold text-white md:h-[56px]">Notify
+                <button @click="validateEmail"
+                    class="w-full h-10 bg-[#4C7BF3] rounded-[28px] font-semibold text-white md:h-[56px] hover:opacity-75">Notify
                     Me</button>
             </div>
         </div>
@@ -29,12 +33,27 @@
 export default {
     data() {
         return {
-            error: true
+            error: false,
+            email: ''
         }
     },
     methods: {
-
-    },
+        validateEmail() {
+            if (this.emailValidate(this.email)) {
+                this.error = false
+            }
+            else if (this.email.length == 0) {
+                this.error = false;
+            }
+            else {
+                this.error = true
+            }
+        },
+        emailValidate(email) {
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailPattern.test(email);
+        },
+    }
 }
 
 </script>

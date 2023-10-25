@@ -28,6 +28,37 @@
         <div class="px-6 w-full mt-16 flex justify-center">
             <div class="img"></div>
         </div>
+        <footer class="w-full flex flex-col items-center justify-end absolute bottom-12">
+            <div>
+                <ul class="flex gap-6">
+
+
+
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <li
+                            class="w-[30px] h-[30px] rounded-full border-[1px] border-gray-200 hover:bg-[#4C7BF3] flex items-center justify-center">
+                            <i @mouseover="iconOver" @mouseout="iconOut" class="fa-brands fa-facebook-f hover:text-white"
+                                style="color: #4C7BF3; padding: 10px;"></i>
+                        </li>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank">
+                        <li
+                            class="w-[30px] h-[30px] rounded-full border-[1px] border-gray-200 hover:bg-[#4C7BF3] flex items-center justify-center">
+                            <i @mouseover="iconOver" @mouseout="iconOut" class="fa-brands fa-twitter hover:text-white"
+                                style="color: #4C7BF3; padding: 10px;"></i>
+                        </li>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <li
+                            class="w-[30px] h-[30px] rounded-full border-[1px] border-gray-200 hover:bg-[#4C7BF3] flex items-center justify-center">
+                            <i @mouseover="iconOver" @mouseout="iconOut" class="fa-brands fa-instagram hover:text-white"
+                                style="color: #4C7BF3; padding: 10px;"></i>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <p class="mt-6 text-[#9B9B9B]">© Copyright Ping. All rights reserved.</p>
+        </footer>
     </div>
 </template>
 
@@ -57,6 +88,14 @@ export default {
             const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
             return emailPattern.test(email);
         },
+        iconOver(event) {
+            let tar = event.target;
+            tar.style.color = 'white'
+        },
+        iconOut(event) {
+            let tar = event.target;
+            tar.style.color = '#4C7BF3'
+        }
     }
 }
 

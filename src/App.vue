@@ -2,11 +2,12 @@
 <template>
     <div class="flex flex-col w-full min-h-screen items-center">
         <div class="mt-20 px-12 w-full flex flex-col gap-8 items-center">
-            <p class="text-[25px] font-bold flex">PING<span class="text-[#4C7BF3] h-1 w-1 ">.</span></p>
+            <p class="text-[25px] font-bold flex md:text-[32px]">PING<span class="text-[#4C7BF3] h-1 w-1 ">.</span></p>
             <div class="flex flex-col gap-3">
-                <h2 class="text-[26px] text-[#969696] font-light">We are launching <strong class="text-black">soon!</strong>
+                <h2 class="text-[26px] text-[#969696] font-light md:text-5xl">We are launching <strong
+                        class="text-black">soon!</strong>
                 </h2>
-                <p class="font-thin flex justify-center">Subscribe and get notified</p>
+                <p class="font-thin flex justify-center md:text-xl">Subscribe and get notified</p>
             </div>
             <div class="w-full flex flex-col gap-[10px] max-w-[700px] md:flex-row">
                 <div

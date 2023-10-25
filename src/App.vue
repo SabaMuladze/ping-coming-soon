@@ -10,8 +10,8 @@
                 <p class="font-thin flex justify-center md:text-xl">Subscribe and get notified</p>
             </div>
             <div class="w-full flex flex-col gap-[10px] max-w-[700px] md:flex-row">
-                <div
-                    class="w-full h-10 rounded-[28px] border-[2px] border-[#4C7BF3] flex items-center py-1 px-3 pl-3 md:flex-[150%] md:h-[56px]">
+                <div :style="{ border: error ? 'red solid 1px' : '' }"
+                    class="w-full h-10 rounded-[28px] border-[1px] border-[#4C7BF3] flex items-center py-1 px-3 pl-3 md:flex-[150%] md:h-[56px]">
                     <input class="font-light outline-none w-full h-full text-sm md:text-base" type="email"
                         placeholder="Your email address…">
                 </div>
@@ -25,7 +25,17 @@
     </div>
 </template>
 
-<script >
+<script>
+export default {
+    data() {
+        return {
+            error: true
+        }
+    },
+    methods: {
+
+    },
+}
 
 </script>
 

@@ -16,7 +16,9 @@
                         <input v-model="email" class="font-light outline-none w-full h-full text-sm md:text-base"
                             type="email" placeholder="Your email address…">
                     </div>
-                    <p v-show="error" class="text-[#FF5466] text-xs md:text-sm">Please provide a valid email address</p>
+                    <p v-show="error" class="text-[#FF5466] text-xs md:text-sm ml-4">Please provide a valid email address
+                    </p>
+                    <p v-show="sent" class="ml-4 text-[#2ECC71]">Good job !</p>
                 </div>
                 <button @click="validateEmail"
                     class="w-full h-10 bg-[#4C7BF3] rounded-[28px] font-semibold text-white md:h-[56px] hover:opacity-75">Notify
@@ -34,13 +36,15 @@ export default {
     data() {
         return {
             error: false,
-            email: ''
+            email: '',
+            sent: false
         }
     },
     methods: {
         validateEmail() {
             if (this.emailValidate(this.email)) {
-                this.error = false
+                this.error = false;
+                this.sent = true;
             }
             else if (this.email.length == 0) {
                 this.error = false;
